@@ -1,5 +1,7 @@
-#!/usr/bin/python3 
-with open("mytextfile.txt", "r") as f:
+#!/usr/bin/python3
+import sys
+mytextfile = sys.argv[1] 
+with open(mytextfile, "r") as f:
     string = f.read()
 import re
 first1 = re.search(r"(\+\d{2})-(\d{2})-(\d{4})-(\d{4})", string)
