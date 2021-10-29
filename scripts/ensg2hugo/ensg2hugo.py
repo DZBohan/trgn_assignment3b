@@ -40,7 +40,8 @@ parser = argparse.ArgumentParser(description='manual to this script')
 parser.add_argument('-f',type=int,default=1,choices=range(10),required=False)
 parser.add_argument('path',type=str)
 csv = pd.read_csv(parser.parse_args().path)
-column_index = csv.columns[parser.parse_args().f]
+column_number = parser.parse_args().f - 1
+column_index = csv.columns[column_number]
 def exchange_gene_name (id):
     id_simple=id.split('.')[0]
     if id_simple in ens2gene.keys():
